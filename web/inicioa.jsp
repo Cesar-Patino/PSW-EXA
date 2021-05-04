@@ -17,29 +17,24 @@ and open the template in the editor.
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
-                        <li><a href="login.html">Log in</a></li>
+                        <li><a href="login.html">Log in Administrador</a></li>
+                        <li><a href="inicoa.jsp">Log in Usuario</a></li>
                         <li><a href="registrarUsuario.html">Sign in</a></li>
                     </ul>
                 </nav>
         </header>
-        <br>
         <div>
-            <form class="form-register" method="post" action="guardar.jsp">
+            <br><br>
+            <form class="form-register" method="get" action="validara.jsp">
                 <div class="centrar">
                     <img src="./img/logo.png">
                 </div>
-                <input class="controls" type="text" name="nom" placeholder="Nombre">
-                <input class="controls" type="text" name="ap" placeholder="Apellido paterno">
-                <input class="controls" type="text" name="am" placeholder="apellido materno">
-                <input class="controls" type="number" name="edad" placeholder="edad ">
-                <input class="controls" type="date" name="fec" placeholder="fecha de nacimiento" >
-                <input class="controls" type="text" name="domicilio" placeholder="Domicilio ">
-                <input class="controls" type="number" name="celular" placeholder="celular ">
-                <input class="butons" type="submit" value="Registrar" />
-                
-                <p align="center"><a href="login.html">Â¿Ya tengo cuenta?</a></p> 
+                <input class="controls" type="text" name="nom" placeholder=" Nombre">
+                <input class="controls" type="password" name="password" placeholder="Password">
+                <input class="butons" type="submit" value="Iniciar sesión" />
+                <p align="center"><a href="registrarUsuario.html">¿No tienes una cuenta?</a></p>
             </form>
-            <br><br><br>
+            <br><br><br><br><br>
         </div>
         <div id="footer">
             <table class="pie">
@@ -48,7 +43,7 @@ and open the template in the editor.
                 </tr>
                 <tr></tr>
                 <tr>
-                    <h4>Cesar PatiÃ±o</h4>
+                    <h4>Cesar Patiño</h4>
                 </tr>
                 <tr></tr>
                 <tr>
@@ -62,3 +57,5 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+
+
