@@ -23,7 +23,7 @@
             </div>
             <div>
                 <a href="login.html"><button>Log in</button></a>
-                <a href="registrarUsuario.html"><button>Sign in</button></a>
+                <a href="registrar.html"><button>Sign in</button></a>
             </div>
         </nav>
         <% 
