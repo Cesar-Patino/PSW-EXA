@@ -47,27 +47,36 @@
             driver = "com.mysql.jdbc.Driver";
             
             try{
-                Class.forName(driver);
-                con = DriverManager.getConnection(url, userName, password);
+                  Class.forName(driver);
+                   con = DriverManager.getConnection(url, userName, password);
+                   
+                   try{
+                       set = con.createStatement();
+                //necesito los parametros del formulario
+                    String nom, am,dom,fecha,numero;
+
+                nom = request.getParameter("nom");
+                int ap = Integer.parseInt(request.getParameter("p"));
+                am = request.getParameter("t");
+                dom = request.getParameter("ti");
+
+               
+               
+            
                 
-                try{
-                    set = con.createStatement();
+                  String q = "insert into helado "
+                        + "(nom_p, pre_p, tam_p, tipo_p) "
+                        + "values ('"+nom+"', '"+ap+"', '"+am+"', '"+dom+"')";
+                
+                set.executeUpdate(q);;
+                     
+                       %>
+                       <h2>Registro Existoso</h2>
+                       <%
+                 
+                      
+                       set.close();
                     
-                    String nomHelado, precio, descrip, q;
-                    nomHelado = request.getParameter("nomHelado");
-                    precio = request.getParameter("precio");
-                    descrip = request.getParameter("descripcion");
-                    
-                    q = "insert into mhelados(nom_hel, precio_hel, descrip_hel)"
-                            + "values ('"+nomHelado+"','"+precio+"','"+descrip+"')";
-                    
-                    set.executeUpdate(q);
-                    
-                    RequestDispatcher rd;
-                    rd=request.getRequestDispatcher("./productoAdmin.jsp");
-                    rd.forward(request, response);
-                    
-                    con.close();
                 }catch(SQLException ed){
                     System.out.println("Lectura de datos incorrecta");
                     System.out.println(ed.getMessage());

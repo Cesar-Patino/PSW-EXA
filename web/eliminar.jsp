@@ -1,7 +1,7 @@
 <%-- 
     Document   : agregarH
     Created on : 2/05/2021, 04:13:21 PM
-    Author     : EmilianoDev12
+    Author     : PC
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*"%>
@@ -46,9 +46,9 @@
                
             String url, userName, password, driver;
                
-            url = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_5a49af62a75744f";
-            userName = "b3be4caf7283ff";
-            password = "d8f5d01c";
+            url = "jdbc:mysql://localhost/registropsw";
+            userName = "root";
+            password = "Dante@23$";
                
             driver = "com.mysql.jdbc.Driver";
             
@@ -58,19 +58,21 @@
                 
                 try{
                     set = con.createStatement();
-                    
-                    String nomHelado,q;
-                    nomHelado = request.getParameter("nomHelado");
-                    
-                    q = "delete from mhelados where nom_hel='"+nomHelado+"'";
-                    
-                    set.executeUpdate(q);
-                    
-                    RequestDispatcher rd;
-                    rd=request.getRequestDispatcher("./productoAdmin.jsp");
-                    rd.forward(request, response);
-                    
-                    con.close();
+                
+                //necesito los parametros del formulario
+                 int id = Integer.parseInt(request.getParameter("ideliminar"));
+            
+            //preparo mi sentencia
+            //delete from tabla where atributo = valor
+            
+            String q = "delete from helado where id_p = "+id+";";
+            set.executeUpdate(q);
+                   %>
+                    <center>
+                        <h1>eliminacion Exitoso</h1>
+                    </center>
+                <%
+                set.close();
                 }catch(SQLException ed){
                     System.out.println("Lectura de datos incorrecta");
                     System.out.println(ed.getMessage());
