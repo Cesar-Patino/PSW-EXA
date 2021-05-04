@@ -6,15 +6,15 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Ben&Jerry's</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/General.css"/>
-        <link rel="stylesheet" href="./css/formularios.css" />
+        <link rel="stylesheet" href="./css/General.css">
+        <link rel="stylesheet" href="./css/formularios.css">
     </head>
     <body>
-        <main>
-            <header> 
+<center>
+    <header> 
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
@@ -25,23 +25,23 @@ and open the template in the editor.
                     </ul>
                 </nav>
             </header>
-            <br>
-            <div class="introducir">
-                <br><br>
-                <form class="form-register" method="post" action="agregarH.jsp">
-                    <div class="centrar" align="center">
+    <br>
+                <div class="containerEliminar" >
+                    <br><br><br><br>
+                <form class="form-register" method="post" name="formularioeliminar" action="eliminarusu.jsp">
+                    <div class="centrar">
                     <img src="./img/logo.png">
                     </div>
-                    <input class="controls" type="text" name="nomHelado" placeholder="Nombre de helado">
-                    <input class="controls" type="number" name="precio" placeholder="Precio del helado">
-                    <input class="controls" type="text" name="descripcion" placeholder="Descripcion">
-                    <input class="butons" type="submit" value="Registrar helado" />
+                    <input placeholder="Id usuario a eliminar" class="controls" type=number" name="ideliminar" onkeypress="return validarn(event)" >
+                    <input class="butons" type="submit" value="Eliminar Usuario" >
                 </form>
-                <br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br>
+                
             </div>
-        </main>
-        <br>
-        <div id="footer">
+                
+
+            </center>   
+    <div id="footer">
             <table class="pie">
                 <tr>
                     <h4>Integrantes</h4>

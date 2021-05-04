@@ -6,7 +6,7 @@
 
 .form-register {
     width: 400px;
-    background: #24303c;
+    background-color: #b65200;
     padding: 30px;
     margin: auto;
     margin-top: 50px;
@@ -38,7 +38,7 @@ nav a{
 
 .controls {
     width: 100%;
-    background-color: #24303c;
+    background-color: #b65200;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;

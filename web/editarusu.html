@@ -1,0 +1,70 @@
+  
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="./css/formularios.css">
+          <link rel="stylesheet" href="./css/General.css">
+
+
+    </head>
+    <body>
+        <header> 
+                <nav class="navegacion" style="width: 100%;">
+                    <ul class="menu">
+                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
+                        <li><a href="productoAdmin.jsp">Productos</a></li>
+                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                        <li><a href="editar.html">Editar Producto</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <br>  
+    <center><h1>Actualizar</h1></center>
+        <form class="form-register" name="formulario" method="post" 
+                      action="editarusu.jsp">
+                                <div class="centrar">
+                    <img src="./img/logo.png">
+                    </div>
+                                <input class="controls" type="number" name="idactualizar" placeholder="ID de la persona a actualizar">
+                                <input class="controls" type="text" name="nomn" placeholder="Nombre">
+                                <input class="controls" type="text" name="apn" placeholder="Apellido Paterno">
+                                <input class="controls"  type="text" name="amn" placeholder="apellido Materno">
+                                <input class="controls" type="number" min="1" max="99" size="2" name="edadn" placeholder="Edad">
+                                <input class="controls" type="date" name="fechan" placeholder="Fecha de Nacimiento">
+                                <input class="controls" type="text" name="domicilion" placeholder="Domicilio">
+                                <input class="controls" type="tel" name="numeron" size="12" placeholder="Numero Celular">
+                                <input class="butons" type="submit" value="Guardar cambios" >
+                                <input class="butons" type="reset" value="Borrar" >
+                       </form>
+    <br><br><br>
+
+        <div id="footer">
+            <table class="pie">
+                <tr>
+                    <h4>Integrantes:</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Chávez Patiño Cesar Uriel</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                <h4>Ramirez Aranda Dante Israel </h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Vilchis Cuevas Joaquin Ignacio </h4>
+                </tr>
+        </table>
+        </div>
+    </body>
+</html>

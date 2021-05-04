@@ -10,8 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Ingreso helado fallido</title>
-        <link rel="stylesheet" href="./css/const.css"/>
-        <link rel="stylesheet" href="./css/index.css"/>
+        <link rel="stylesheet" href="./css/General.css"/>
         <link rel="stylesheet" href="./css/formularios.css"/>
         <style>
             a{
@@ -20,25 +19,17 @@
         </style>
     </head>
     <body>
-        <nav>
-                <div>
-                    <a href="index.html">BEN&JERRY'S</a>
-                </div>
-                <div class="links">
-                    <a href="indexAdmin.html">About</a>
-                    <a href="productoAdmin.jsp">Productos</a>
-                    <a href="anadirProduct.html">Añadir Producto</a>
-                    <a href="eliminarH.html">Eliminar Producto</a>
-                    <a href="editar.html">Editar Producto</a>
-                </div>
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <circle cx="12" cy="7" r="4" />
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                  </svg>
-                </div>
-            </nav>
+        <header> 
+                <nav class="navegacion" style="width: 100%;">
+                    <ul class="menu">
+                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
+                        <li><a href="productoAdmin.jsp">Productos</a></li>
+                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                        <li><a href="editar.html">Editar Producto</a></li>
+                    </ul>
+                </nav>
+            </header>
         <%
             Connection con = null;
             Statement set = null;

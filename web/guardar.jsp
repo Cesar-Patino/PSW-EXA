@@ -31,9 +31,9 @@
                
                String url, userName, password, driver;
                
-               url = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_5a49af62a75744f";
-                userName = "b3be4caf7283ff";
-                password = "d8f5d01c";
+               url = "jdbc:mysql://localhost/registropsw";
+                userName = "root";
+                password = "Dante@23$";
                
                driver = "com.mysql.jdbc.Driver";
                
@@ -43,36 +43,30 @@
                    
                    try{
                        set = con.createStatement();
-                       
-                       String correo, nombre, contrasena, cod, q;
-                       boolean tipo;
-                       
-                       correo = request.getParameter("correo");
-                       nombre = request.getParameter("nombre");
-                       contrasena = request.getParameter("contrasena");
-                       cod = request.getParameter("codigo");
-                       
-                       q = "insert into musuarios(correo_usu, nom_usu, cont_usu, admin) "
-                               + "values ( '"+correo+"', '"+nombre+"','"+contrasena+"',";
-                       if(cod.isEmpty()){
-                           q += "'"+0+"')";
-                           tipo = false;
-                       }else{
-                           q += "'"+1+"')";
-                           tipo = true;
-                       }
+                //necesito los parametros del formulario
+                    String nom, ap, am,dom,fecha,numero;
+                int edad;
+                nom = request.getParameter("nom");
+                ap = request.getParameter("ap");
+                am = request.getParameter("am");
+                dom = request.getParameter("domicilio");
+                edad = Integer.parseInt(request.getParameter("edad"));
+                fecha = request.getParameter("fecha");
+                numero =request.getParameter("numero");
+               
+            
+                
+                  String q = "insert into mregistro "
+                        + "(nom_usu, ap_usu, am_usu, edad_usu, fec_usu,dom_usu, numero_usu) "
+                        + "values ('"+nom+"', '"+ap+"', '"+am+"', "+edad+", '"+fecha+"', '"+dom+"', '"+numero+"')";
+                
+                set.executeUpdate(q);;
                        
                        int registro = set.executeUpdate(q);
                        %>
                        <h2>Registro Existoso</h2>
                        <%
-                       out.println("<p>Correo: "+correo+"</p>");
-                       out.println("<p>Nombre: "+nombre+"</p>");
-                       if(tipo){
-                           out.println("<p>Bienvenido nuevo adminsitrador</p>");
-                       }else{
-                           out.println("<p>Bienvenido nuevo usuario</p>");
-                       }
+                       
                        set.close();
                    }catch(SQLException ed){
                        System.out.println("Error al registrar en la tabla");
