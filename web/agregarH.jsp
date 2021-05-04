@@ -31,13 +31,7 @@
                     <a href="eliminarH.html">Eliminar Producto</a>
                     <a href="editar.html">Editar Producto</a>
                 </div>
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <circle cx="12" cy="7" r="4" />
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                  </svg>
-                </div>
+
             </nav>
         <%
             Connection con = null;
@@ -46,34 +40,43 @@
                
             String url, userName, password, driver;
                
-            url = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_5a49af62a75744f";
-            userName = "b3be4caf7283ff";
-            password = "d8f5d01c";
+            url = "jdbc:mysql://localhost/registropsw";             
+            userName = "root";
+            password = "Dante@23$";
                
             driver = "com.mysql.jdbc.Driver";
             
             try{
-                Class.forName(driver);
-                con = DriverManager.getConnection(url, userName, password);
+                  Class.forName(driver);
+                   con = DriverManager.getConnection(url, userName, password);
+                   
+                   try{
+                       set = con.createStatement();
+                //necesito los parametros del formulario
+                    String nom, am,dom,fecha,numero;
+
+                nom = request.getParameter("nom");
+                int ap = Integer.parseInt(request.getParameter("p"));
+                am = request.getParameter("t");
+                dom = request.getParameter("ti");
+
+               
+               
+            
                 
-                try{
-                    set = con.createStatement();
+                  String q = "insert into helado "
+                        + "(nom_p, pre_p, tam_p, tipo_p) "
+                        + "values ('"+nom+"', '"+ap+"', '"+am+"', '"+dom+"')";
+                
+                set.executeUpdate(q);;
+                     
+                       %>
+                       <h2>Registro Existoso</h2>
+                       <%
+                 
+                      
+                       set.close();
                     
-                    String nomHelado, precio, descrip, q;
-                    nomHelado = request.getParameter("nomHelado");
-                    precio = request.getParameter("precio");
-                    descrip = request.getParameter("descripcion");
-                    
-                    q = "insert into mhelados(nom_hel, precio_hel, descrip_hel)"
-                            + "values ('"+nomHelado+"','"+precio+"','"+descrip+"')";
-                    
-                    set.executeUpdate(q);
-                    
-                    RequestDispatcher rd;
-                    rd=request.getRequestDispatcher("./productoAdmin.jsp");
-                    rd.forward(request, response);
-                    
-                    con.close();
                 }catch(SQLException ed){
                     System.out.println("Lectura de datos incorrecta");
                     System.out.println(ed.getMessage());
