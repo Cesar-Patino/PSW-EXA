@@ -15,25 +15,17 @@
         <link rel="stylesheet" href="./css/formularios.css"/>
     </head>
     <body>
-        <nav>
-                <div>
-                    <a href="index.html">BEN&JERRY'S</a>
-                </div>
-                <div class="links">
-                    <a href="indexAdmin.html">About</a>
-                    <a href="productoAdmin.jsp">Productos</a>
-                    <a href="anadirProduct.html">Añadir Producto</a>
-                    <a href="eliminarH.html">Eliminar Producto</a>
-                    <a href="editar.html">Editar Producto</a>
-                </div>
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <circle cx="12" cy="7" r="4" />
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-                  </svg>
-                </div>
-            </nav>
+        <header> 
+                <nav class="navegacion" style="width: 100%;">
+                    <ul class="menu">
+                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
+                        <li><a href="productoAdmin.jsp">Productos</a></li>
+                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                        <li><a href="editar.html">Editar Producto</a></li>
+                    </ul>
+                </nav>
+            </header>
         <%
             Connection con = null;
             Statement set = null;
@@ -102,22 +94,24 @@
                 <%
             }
         %>
-    <footer>
-            <div>
-                <h2>Developers:</h2>
-                <p>Asch García Jan Albert</p>
-                <p>Casillas Avina Gael Emiliano</p>
-                <p>Cote de la Rosa José Carlos</p>
-                <p>Jiménez Rodríguez Alejandro Martin</p>
-            </div>
-            <div>
-                <h2>Grupo:</h2>
-                <p>4IV8</p>
-            </div>
-            <div>
-                <h2>Repositorio:</h2>
-                <p><a href="https://github.com/EmilianoDev12/4IV8-Examen-Practico">4IV8-Examen-P2</a></p>
-            </div>
-        </footer>
+    <div id="footer">
+            <table class="pie">
+                <tr>
+                    <h4>Integrantes</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Cesar Patiño</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                <h4>Ramirez Aranda Dante Israel </h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Vilchis Cuevas Joaquin Ignacio </h4>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>
