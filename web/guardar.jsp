@@ -10,23 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
-        <link rel="stylesheet" href="./css/const.css"/>
-        <link rel="stylesheet" href="./css/index.css"/>
+        <link rel="stylesheet" href="./css/General.css"/>
     </head>
     <body>
         <main>
-            <nav>
-                <div>
-                    <a href="index.html">BEN&JERRY'SS</a>
-                </div>
-                <div class="links">
-                    <a href="">About</a>
-                </div>
-                <div>
-                    <a href="login.html"><button>Log in</button></a>
-                    <a href="registrarUsuario.html"><button>Sign in</button></a>
-                </div>
-            </nav>
+            <header> 
+                <nav class="navegacion" style="width: 100%;">
+                    <ul class="menu">
+                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
+                        <li><a href="login.html">Log in</a></li>
+                        <li><a href="registrarUsuario.html">Sign in</a></li>
+                    </ul>
+                </nav>
+            </header>
             
             <%
                Connection con = null;
@@ -90,28 +86,32 @@
                     System.out.println(e.getMessage());
                     System.out.println(e.getStackTrace());
                     %>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <h2>Sitio en Construccion</h2>
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <%
                }
             %>
             
         </main>
-        <footer>
-            <div>
-                <h2>Developers:</h2>
-                <p>Asch García Jan Albert</p>
-                <p>Casillas Avina Gael Emiliano</p>
-                <p>Cote de la Rosa José Carlos</p>
-                <p>Jiménez Rodríguez Alejandro Martin</p>
-            </div>
-            <div>
-                <h2>Grupo:</h2>
-                <p>4IV8</p>
-            </div>
-            <div>
-                <h2>Repositorio:</h2>
-                <p><a href="https://github.com/EmilianoDev12/4IV8-Examen-Practico">4IV8-Examen-P2</a></p>
-            </div>
-        </footer>
+        <div id="footer">
+            <table class="pie">
+                <tr>
+                    <h4>Integrantes</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Cesar Patiño</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                <h4>Ramirez Aranda Dante Israel </h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Vilchis Cuevas Joaquin Ignacio </h4>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>

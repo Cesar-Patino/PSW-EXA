@@ -15,6 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+
         <% 
         //aqui ya puedo incorporar codigo java
         Connection con = null;
@@ -32,6 +33,31 @@
         try{
             Class.forName(driver);
             con = DriverManager.getConnection(url, userName, password);
+=======
+        <header> 
+                <nav class="navegacion" style="width: 100%;">
+                    <ul class="menu">
+                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
+                        <li><a href="productoAdmin.jsp">Productos</a></li>
+                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                        <li><a href="editar.html">Editar Producto</a></li>
+                    </ul>
+                </nav>
+            </header>
+        <%
+            Connection con = null;
+            Statement set = null;
+            ResultSet rs = null;
+               
+            String url, userName, password, driver;
+               
+            url = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_5a49af62a75744f";
+            userName = "b3be4caf7283ff";
+            password = "d8f5d01c";
+               
+            driver = "com.mysql.jdbc.Driver";
+
             
             //diferentes vistas para los errores
             //error exclusivo de sql
@@ -84,6 +110,7 @@
                 <%
             
             }
+
             con.close();
         
         }catch(Exception e){
@@ -101,5 +128,27 @@
         
         
        
+
+        %>
+    <div id="footer">
+            <table class="pie">
+                <tr>
+                    <h4>Integrantes</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Cesar Patiño</h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                <h4>Ramirez Aranda Dante Israel </h4>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <h4>Vilchis Cuevas Joaquin Ignacio </h4>
+                </tr>
+            </table>
+        </div>
+
     </body>
 </html>
