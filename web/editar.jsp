@@ -33,15 +33,30 @@
         try{
             Class.forName(driver);
             con = DriverManager.getConnection(url, userName, password);
-=======
-        <header> 
+      <header> 
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
-                        <li><a href="productoAdmin.jsp">Productos</a></li>
-                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
-                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
-                        <li><a href="editar.html">Editar Producto</a></li>
+                        
+                        <li><a>CRUD productos</a>
+                        <ul class="sub">
+                         <center>
+                            <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                            <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                            <li><a href="editar.html">Editar Producto</a></li>
+                            <li><a href="productoAdmin.jsp">Agregar productos</a>                           
+                        </center>
+                     </ul>
+                            </li>
+                            <li><a>CRUD usuarios</a>
+                        <ul class="sub">
+                         <center>
+                            <li><a href="eliminausu.html">Eliminar usuario</a></li>
+                            <li><a href="editarusu.html">Editar usuario</a></li>
+                        </center>
+                     </ul>
+                            </li>
+
                     </ul>
                 </nav>
             </header>

@@ -18,10 +18,26 @@
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
-                        <li><a href="productoAdmin.jsp">Productos</a></li>
-                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
-                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
-                        <li><a href="editar.html">Editar Producto</a></li>
+                        
+                        <li><a>CRUD productos</a>
+                        <ul class="sub">
+                         <center>
+                            <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                            <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                            <li><a href="editar.html">Editar Producto</a></li>
+                            <li><a href="productoAdmin.jsp">Agregar productos</a>                           
+                        </center>
+                     </ul>
+                            </li>
+                            <li><a>CRUD usuarios</a>
+                        <ul class="sub">
+                         <center>
+                            <li><a href="eliminausu.html">Eliminar usuario</a></li>
+                            <li><a href="editarusu.html">Editar usuario</a></li>
+                        </center>
+                     </ul>
+                            </li>
+
                     </ul>
                 </nav>
             </header>
@@ -34,9 +50,9 @@
 
                         String url, userName, password, driver, q;
 
-                        url = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_5a49af62a75744f";
-                        userName = "b3be4caf7283ff";
-                        password = "d8f5d01c";
+                       url = "jdbc:mysql://localhost/registropsw";
+                        userName = "root";
+                        password = "Dante@23$";
 
                         driver = "com.mysql.jdbc.Driver";
                         
@@ -45,24 +61,35 @@
                             con = DriverManager.getConnection(url, userName, password);
                             
                             try{
-                                set = con.createStatement();
-                                
-                                q = "select * from mhelados";
-                                
-                                rs = set.executeQuery(q);
-                                
-                                while(rs.next()){
-                                    %>
-                                <div class="producto">
-                                    <div class="producto__informacion">
-                                        <p class="producto__nombre"><%=rs.getString("nom_hel")%></p>
-                                        <p class="producto__precio">$<%=rs.getString("precio_hel")%></p>
-                                        <p class="producto__precio"><%=rs.getString("descrip_hel")%></p> 
-                                    </div>
-                                </div><!--.prodcuto-->
-                                    <%
-                                }
-                                
+                              String nom, apmat, edad;
+                                int  id,appat;
+                
+                //tenemos que crear la querry
+                
+                 q = "select * from helado";
+                
+                set = con.createStatement();
+                rs = set.executeQuery(q);
+                
+                while(rs.next()){
+                //mientras exista un registro hay que obtener los datos de la consulta
+                    id = rs.getInt("id_p");
+                    nom = rs.getString("nom_p");
+                    appat = rs.getInt("pre_p");
+                    apmat = rs.getString("tam_p");
+                    edad = rs.getString("tipo_p");
+                    
+                    out.println("<tbody>"
+                            + "<tr><td>"+id+"</td>"
+                            + "<td>"+nom+" "+appat+" "+apmat+" </td>"
+                            + "<td>"+edad+"</td>");
+                }
+                //hay que cerrar los hilos
+                rs.close();
+                set.close();
+                
+                System.out.println("Consulta Exitosa");
+            
                                 
                             }catch(SQLException ed){
                                 System.out.println("Lectura de datos incorrecta");

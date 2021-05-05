@@ -7,19 +7,34 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Ingreso helado fallido</title>
-        <link rel="stylesheet" href="./css/General.css"/>
-        <link rel="stylesheet" href="./css/formularios.css"/>
-        <style>
-            a{
-                color: black;
-            }
-        </style>
-    </head>
+    <header> 
+                <nav class="navegacion" style="width: 100%;">
+                    <ul class="menu">
+                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
+                        
+                        <li><a>CRUD productos</a>
+                        <ul class="sub">
+                         <center>
+                            <li><a href="anadirProduct.html">Añadir Producto</a></li>
+                            <li><a href="eliminarH.html">Eliminar Producto</a></li>
+                            <li><a href="editar.html">Editar Producto</a></li>
+                            <li><a href="productoAdmin.jsp">Agregar productos</a>                           
+                        </center>
+                     </ul>
+                            </li>
+                            <li><a>CRUD usuarios</a>
+                        <ul class="sub">
+                         <center>
+                            <li><a href="eliminausu.html">Eliminar usuario</a></li>
+                            <li><a href="editarusu.html">Editar usuario</a></li>
+                        </center>
+                     </ul>
+                            </li>
+
+                    </ul>
+                </nav>
+            </header>
     <body>
-<<<<<<< HEAD
         <header> 
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
@@ -31,21 +46,7 @@
                     </ul>
                 </nav>
             </header>
-=======
-        <nav>
-                <div>
-                    <a href="index.html">BEN&JERRY'S</a>
-                </div>
-                <div class="links">
-                    <a href="indexAdmin.html">About</a>
-                    <a href="productoAdmin.jsp">Productos</a>
-                    <a href="anadirProduct.html">Añadir Producto</a>
-                    <a href="eliminarH.html">Eliminar Producto</a>
-                    <a href="editar.html">Editar Producto</a>
-                </div>
-
-            </nav>
->>>>>>> a8261db496db77c97e864a431702fe20469e5f76
+                
         <%
             Connection con = null;
             Statement set = null;

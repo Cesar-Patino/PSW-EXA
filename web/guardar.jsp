@@ -46,25 +46,19 @@
                 //necesito los parametros del formulario
                     String nom, ap, am,dom,fecha,numero;
                 int edad;
-<<<<<<< HEAD
-=======
 
->>>>>>> a8261db496db77c97e864a431702fe20469e5f76
                 nom = request.getParameter("nom");
                 ap = request.getParameter("ap");
                 am = request.getParameter("am");
                 dom = request.getParameter("domicilio");
-<<<<<<< HEAD
                 edad = Integer.parseInt(request.getParameter("edad"));
                 fecha = request.getParameter("fecha");
                 numero =request.getParameter("numero");
-=======
 
                 edad = Integer.parseInt(request.getParameter("edad"));
                 fecha = request.getParameter("fecha");
                 numero =request.getParameter("numero");
 
->>>>>>> a8261db496db77c97e864a431702fe20469e5f76
                
             
                 
@@ -73,21 +67,12 @@
                         + "values ('"+nom+"', '"+ap+"', '"+am+"', "+edad+", '"+fecha+"', '"+dom+"', '"+numero+"')";
                 
                 set.executeUpdate(q);;
-<<<<<<< HEAD
                        
-                       int registro = set.executeUpdate(q);
+                       
                        %>
                        <h2>Registro Existoso</h2>
-                       <%
-                       
-=======
-                     
-                       %>
-                       <h2>Registro Existoso</h2>
-                       <%
-                 
+                       <%             
                       
->>>>>>> a8261db496db77c97e864a431702fe20469e5f76
                        set.close();
                    }catch(SQLException ed){
                        System.out.println("Error al registrar en la tabla");

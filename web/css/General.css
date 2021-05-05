@@ -26,6 +26,32 @@ li{
     font-weight: 600;
     
 }
+.sub li a:hover{
+    color: #ED5752;
+    transition: all .3s;
+}
+
+.sub{
+    position: absolute;
+    background: #000000;
+    width: 70%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.sub li a{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+.menu li:hover .sub{
+    visibility: visible;
+    opacity: 1;
+}
 
 
 .navegacion{
