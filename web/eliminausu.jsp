@@ -15,7 +15,7 @@
     </head>
     <body>
        <header> 
-                <nav class="navegacion" style="width: 100%;">
+                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
                         
@@ -73,16 +73,7 @@
             String q = "delete from mregistro where id_usu = "+id+";";
             set.executeUpdate(q);
                    %>
-                <header> 
-                    <nav class="navegacion" style="width: 100%;">
-                        <ul class="menu"> 
-                            <li class="logo"><img src="./IMG/logo.png"></li>
-                            <li ><a href="index.html">Principal</a></li>
-                            <li ><a href="iniciars.html">Productos</a></li>
-                            <li><a href="iniciars.html">Registrarme</a></li>
-                        </ul>
-                    </nav>
-                </header>
+                
                     <center>
                         <h1>eliminacion Exitoso</h1>
                     </center>
@@ -137,3 +128,4 @@
        
     </body>
 </html>
+

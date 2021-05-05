@@ -1,21 +1,21 @@
-<%-- 
-    Document   : actualizar
-    Created on : 2/05/2021, 08:25:49 PM
-    Author     : PC
+ <%-- 
+    Document   : agregarH
+    Created on : 2/05/2021, 04:13:21 PM
+    Author     : usuario
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="./css/General.css">
-        <link rel="stylesheet" href="./css/formularios.css">
-        
-        <title>JSP Page</title>
+     <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="./css/formularios.css">
+          <link rel="stylesheet" href="./css/General.css">
+
+
     </head>
-    <body>
-        <header> 
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
@@ -42,28 +42,28 @@
                     </ul>
                 </nav>
             </header>
-        <% 
-        //aqui ya puedo incorporar codigo java
-        Connection con = null;
-        Statement set = null;
-        ResultSet rs = null;
-        
-        String url, userName, password, driver;
-        
-        url = "jdbc:mysql://localhost/registropsw";
-        userName = "root";
-        password = "Dante@23$";
-        
-        driver = "com.mysql.jdbc.Driver";
-        
-        try{
-            Class.forName(driver);
-            con = DriverManager.getConnection(url, userName, password);
+    <body>
+       
+                
+        <%
+            Connection con = null;
+            Statement set = null;
+            ResultSet rs = null;
+               
+            String url, userName, password, driver;
+               
+            url = "jdbc:mysql://localhost/registropsw";             
+            userName = "root";
+            password = "Dante@23$";
+               
+            driver = "com.mysql.jdbc.Driver";
             
-            //diferentes vistas para los errores
-            //error exclusivo de sql
             try{
-                set = con.createStatement();
+                  Class.forName(driver);
+                   con = DriverManager.getConnection(url, userName, password);
+                   
+                   try{
+                       set = con.createStatement();
                 //necesito los parametros del formulario
                     String nom, ap, am,dom,fecha,numero;
                 int edad;
@@ -84,19 +84,7 @@
                 
                 set.executeUpdate(q);
                 %>
-                <header> 
-                    <nav class="navegacion" style="width: 100%;">
-                        <ul class="menu"> 
-                            <li class="logo"><img src="./IMG/logo.png"></li>
-                            <li ><a href="index.html">Principal</a></li>
-                            <li ><a href="iniciars.html">Productos</a></li>
-                            <li><a href="iniciars.html">Registrarme</a></li>
-                        </ul>
-                    </nav>
-                </header>
-                    <center>
-                        <h1>Registro Exitoso</h1>
-                    </center>
+                <h1>a</h1>
                 <%
                 set.close();
             
@@ -122,14 +110,14 @@
         }
             
          %>
-         <div id="footer">
+        <div id="footer">
             <table class="pie">
                 <tr>
-                    <h4>Integrantes:</h4>
+                    <h4>Integrantes</h4>
                 </tr>
                 <tr></tr>
                 <tr>
-                    <h4>Chávez Patiño Cesar Uriel</h4>
+                    <h4>Cesar Patiño</h4>
                 </tr>
                 <tr></tr>
                 <tr>
@@ -139,11 +127,10 @@
                 <tr>
                     <h4>Vilchis Cuevas Joaquin Ignacio </h4>
                 </tr>
-        </table>
+            </table>
         </div>
-        
-        
-        
-       
     </body>
 </html>
+
+                
+

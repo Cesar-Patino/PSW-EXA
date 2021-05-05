@@ -7,7 +7,15 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*"%>
 <!DOCTYPE html>
 <html>
-    <header> 
+     <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="./css/formularios.css">
+          <link rel="stylesheet" href="./css/General.css">
+
+
+    </head>
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
@@ -35,17 +43,7 @@
                 </nav>
             </header>
     <body>
-        <header> 
-                <nav class="navegacion" style="width: 100%;">
-                    <ul class="menu">
-                        <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
-                        <li><a href="productoAdmin.jsp">Productos</a></li>
-                        <li><a href="anadirProduct.html">Añadir Producto</a></li>
-                        <li><a href="eliminarH.html">Eliminar Producto</a></li>
-                        <li><a href="editar.html">Editar Producto</a></li>
-                    </ul>
-                </nav>
-            </header>
+       
                 
         <%
             Connection con = null;

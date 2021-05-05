@@ -1,39 +1,21 @@
 <%-- 
-    Document   : actualizar
-    Created on : 2/05/2021, 08:25:49 PM
-    Author     : PC
+    Document   : agregarH
+    Created on : 2/05/2021, 04:13:21 PM
+    Author     : usuario
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" language="java" import="java.sql.*, java.util.*, java.text.*"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="./CSS/estilo.css">
-        <link rel="shortcut icon" href="./IMG/icon.jpg" />
-        <link rel="stylesheet" href="./CSS/imagenes.css">
-        <title>JSP Page</title>
-    </head>
-    <body>
+     <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="./css/formularios.css">
+          <link rel="stylesheet" href="./css/General.css">
 
-        <% 
-        //aqui ya puedo incorporar codigo java
-        Connection con = null;
-        Statement set = null;
-        ResultSet rs = null;
-        
-        String url, userName, password, driver;
-        
-        url = "jdbc:mysql://localhost/registropsw";
-        userName = "root";
-        password = "Dante@23$";
-        
-        driver = "com.mysql.jdbc.Driver";
-        
-        try{
-            Class.forName(driver);
-            con = DriverManager.getConnection(url, userName, password);
-      <header> 
+
+    </head>
                 <nav class="navegacion" style="width: 100%;">
                     <ul class="menu">
                         <li class="logo"><a href="index.html"><img src="./img/logo.png"></a></li>
@@ -60,6 +42,9 @@
                     </ul>
                 </nav>
             </header>
+    <body>
+       
+                
         <%
             Connection con = null;
             Statement set = null;
@@ -67,52 +52,36 @@
                
             String url, userName, password, driver;
                
-            url = "jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_5a49af62a75744f";
-            userName = "b3be4caf7283ff";
-            password = "d8f5d01c";
+            url = "jdbc:mysql://localhost/registropsw";             
+            userName = "root";
+            password = "Dante@23$";
                
             driver = "com.mysql.jdbc.Driver";
-
             
-            //diferentes vistas para los errores
-            //error exclusivo de sql
             try{
-                set = con.createStatement();
+                  Class.forName(driver);
+                   con = DriverManager.getConnection(url, userName, password);
+                   
+                   try{
+                       set = con.createStatement();
                 //necesito los parametros del formulario
-                    String nom, am,dom,fecha,numero;
+                    String nom, ap, am,dom,fecha,numero;
                 int edad;
-
                 nom = request.getParameter("nom");
-                
-               int ap = Integer.parseInt(request.getParameter("p"));
-               am = request.getParameter("t");
+                am = request.getParameter("t");
                 dom = request.getParameter("ti");
-
-                
+                edad = Integer.parseInt(request.getParameter("p"));
                 int id = Integer.parseInt(request.getParameter("ideliminar"));
-
                
             
                 
                   String q = "UPDATE helado \n"
-                        + "SET nom_p = '"+nom+"', pre_p = '"+ap+"', tam_p = '"+am+"', tipo_p = '"+dom+"' \n"
+                        + "SET nom_p = '"+nom+"',pre_p = "+edad+" , tam_p = '"+am+"', tipo_p = '"+dom+"' \n"
                         + "WHERE id_p ="+id+" ;";
                 
                 set.executeUpdate(q);
                 %>
-                <header> 
-                    <nav class="navegacion" style="width: 100%;">
-                        <ul class="menu"> 
-                            <li class="logo"><img src="./IMG/logo.png"></li>
-                            <li ><a href="index.html">Principal</a></li>
-                            <li ><a href="iniciars.html">Productos</a></li>
-                            <li><a href="iniciars.html">Registrarme</a></li>
-                        </ul>
-                    </nav>
-                </header>
-                    <center>
-                        <h1>Registro Exitoso</h1>
-                    </center>
+                <h1>A</h1>
                 <%
                 set.close();
             
@@ -125,7 +94,6 @@
                 <%
             
             }
-
             con.close();
         
         }catch(Exception e){
@@ -138,14 +106,8 @@
         
         }
             
-            %>
-        
-        
-        
-       
-
-        %>
-    <div id="footer">
+         %>
+        <div id="footer">
             <table class="pie">
                 <tr>
                     <h4>Integrantes</h4>
@@ -164,6 +126,7 @@
                 </tr>
             </table>
         </div>
-
     </body>
 </html>
+
+                

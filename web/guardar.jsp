@@ -56,8 +56,8 @@
                 numero =request.getParameter("numero");
 
                 edad = Integer.parseInt(request.getParameter("edad"));
-                fecha = request.getParameter("fecha");
-                numero =request.getParameter("numero");
+                fecha = request.getParameter("fec");
+                numero =request.getParameter("celular");
 
                
             
